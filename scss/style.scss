@@ -1,0 +1,212 @@
+@use "./keli.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$color_0: #FFFFFF;
+$color_1: #19212D;
+$color_2: #58A6E9;
+$color_3: #000000;
+$px: 8px;
+$transition: all 0.3s;
+
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/font/Roboto_Condensed-Medium.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/font/Roboto_Condensed-Medium.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: Trebuchet;
+    src: url("../assets/font/trebuc.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom right, $color_1, $color_3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+}
+
+.container {
+    @include keli.flex(column, center, center);
+    font-family: Trebuchet, sans-serif;
+    color: $color_0;
+
+    .block {
+        @include keli.flex(column, center, center);
+        width: 50%;
+        height: 60vh;
+    }
+    .content {
+        text-align: center;
+        padding: $px * 2;
+    }
+    @media screen and (max-width: 450px){
+        .block {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .profile {
+        @include keli.flex(column, center, center);
+        line-height: 40px;
+        height: 50vh;
+        z-index: 100;
+
+        .profile-image {
+            width: 150px;
+            border: 2px solid $color_2;
+            border-radius: $px * 100;
+            box-shadow: 2px 2px 20px 0px rgba($color: $color_2, $alpha: 0.6);
+            margin: $px;
+            transition: $transition;
+        }
+        .profile-name {
+            font-size: 2rem;
+        }
+        .profile-title {
+            @include keli.flex(row, center, center);
+            font-size: 1rem;
+            animation: show-badge 0.5s linear;
+            margin: $px;
+
+            @keyframes show-badge {
+                from {
+                    opacity: 0;
+                    margin: 0px;
+                } to {
+                    opacity: 1;
+                    margin: $px;
+                }
+            }
+        }
+        .profile-image:hover {
+            box-shadow: 2px 2px 22px 0px rgba($color: $color_2, $alpha: 1);
+        }
+    }
+    .about {
+        @include keli.flex(column, center, center);
+        width: 50%;
+
+        .about-heading {
+            padding: $px;
+        }
+        .about-content {
+            text-align: center;
+            line-height: $px * 3;
+            animation: about-content 0.5s;
+        }
+        @keyframes about-content {
+            from {
+                margin-top: ($px * 5);
+                opacity: 0;
+            } to {
+                margin-top: 0px;
+                opacity: 1;
+            }
+        }
+    }
+    .service {
+        width: 100%;
+        .service-content {
+            @include keli.flex(row, center, center);
+            gap: 2rem;
+            flex-wrap: wrap;
+            
+            .box {
+                background-color: $color_1;
+                border: 1px solid $color_2;
+                border-radius: $px * 3;
+                box-shadow: 1px 1px 10px 0px rgba($color: $color_2, $alpha: 0.6);
+                line-height: $px * 4;
+                padding: $px * 2;
+                width: 300px;
+                height: 300px;
+                animation: service-box 0.6s;
+                animation-timeline: view();
+
+                .box-heading {
+                    font-weight: bolder;
+                    padding: $px;
+                }
+                .box-content {
+                    text-align: justify;
+                    list-style: none;
+                    padding: $px;
+
+                    .fa-check {
+                        color: $color_2;
+                    }
+                }
+            }
+            @keyframes service-box {
+                from {
+                    opacity: 0;
+                    box-shadow: 1px 1px 12px 0px rgba($color: $color_2, $alpha: 0.6);
+                } to {
+                    opacity: 1;
+                    box-shadow: 1px 1px 12px 0px rgba($color: $color_2, $alpha: 1);
+                }
+            }
+        }
+    }
+    .blur-effect {
+        $circle-t: 10s;
+
+        .blur {
+            background-color: $color_2;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            position: absolute;
+            z-index: 1;
+            filter: blur($px * 10);
+        }
+        .circle-0 {
+            top: 10%;
+            left: 10%;
+            animation: c0 $circle-t;
+        }
+        .circle-1 {
+            top: 20%;
+            right: 10%;
+            animation: c1 $circle-t;
+        }
+        @keyframes c0 {
+            from {
+                top: 50%;
+                left: 5%;
+            } to {
+                top: 10%;
+                left: 10%;
+            }
+        }
+        @keyframes c1 {
+            from {
+                top: 60%;
+                right: 10%;
+            } to {
+                top: 20%;
+                right: 10%;
+            }
+        }
+    }
+}
