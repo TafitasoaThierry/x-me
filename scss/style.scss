@@ -49,10 +49,11 @@ body {
     @include keli.flex(column, center, center);
     font-family: Trebuchet, sans-serif;
     color: $color_0;
+    z-index: 500;
 
     .block {
         @include keli.flex(column, center, center);
-        margin: 30px auto;
+        margin: 60px auto auto auto;
     }
     .content {
         text-align: center;
@@ -252,15 +253,6 @@ body {
                 }
             }
         }
-        // @media screen and (max-width: 470px) {
-        //     .block-skill {
-        //         .list li {
-        //             width: auto;
-        //             text-align: left;
-        //             padding: $px ($px * 2);
-        //         }
-        //     }
-        // }
         @media screen and (max-width: 450px) {
             .block-skill {
                 .skill-heading {
@@ -355,32 +347,55 @@ body {
         }
     }
     .work {
-        gap: 2rem;
+        gap: 1rem;
+
         .work-heading {
             text-align: center;
         }
         .work-content {
             @include keli.flex(column, center, center);
+
             .project-title {
                 text-align: center;
                 padding: $px * 2;
+            }
+            @media screen and (max-width: 450px) {
+                .project-title {
+                    font-size: 1rem;
+                }
             }
             .image-presentation {
                 @include keli.flex(row, center, center);
                 width: 500px;
                 gap: 1rem;
                 text-align: center;
-                overflow-x: clip;
+                overflow: hidden;
 
                 img {
-                    width: 100%;
-                    border-radius: $px;
+                    width: 98%;
+                    border: 1px solid $color_0;
+                    border-radius: 4px;
+                    animation: project 0.3s;
+                    animation-timeline: view();
                 }
             }
             @media screen and (max-width: 520px) {
                 .image-presentation {
                     width: 100%;
                 }
+            }
+        }
+        .redirect {
+            text-align: center;
+            padding: ($px*4) $px;
+
+            h3 {
+                font-size: 1rem;
+
+            }
+            .redirect-link {
+                color: $color_2;
+                padding: $px;
             }
         }
     }
@@ -451,6 +466,75 @@ body {
             list-style: none;
             line-height: 40px;
             text-align: center;
+        }
+    }
+}
+.welcome {
+    @include keli.flex(column, center, center);
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 1500;
+    font-family: Poppins, sans-serif;
+
+    .welcome-modal {
+        @include keli.flex(column, center, start);
+        width: 500px;
+        height: 350px;
+        background-image: linear-gradient(to bottom right, $color_1, $color_2,);
+        padding: $px * 2;
+        border-radius: $px * 3;
+        color: $color_0;
+
+        .salutation, .presentation {
+            padding: $px;
+        }
+        .presentation {
+            @include keli.flex(row, center, center);
+            animation: presentation 2s linear;
+        }
+        @keyframes presentation {
+            from {
+                opacity: 0;
+            }to {
+                opacity: 1;
+            }
+        }
+        .loading {
+            margin: $px * 5;
+            width: 100px;
+            height: 100px;
+            border-top: 2px solid transparent;
+            border-right: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            border-left: 4px solid $color_0;
+            border-radius: 100px;
+            animation: loading 1s linear infinite;
+        }
+        @keyframes loading {
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+            100% { transform: rotate(360deg); }
+        }
+    }
+    @media screen and (max-width: 520px){
+        .welcome-modal {
+            width: 90%;
+            margin: $px * 2;
+
+            .salutation, .presentation {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    @media screen and (max-width: 290px){
+        .welcome-modal {
+            .salutation, .presentation {
+                font-size: 1rem;
+            }
         }
     }
 }
