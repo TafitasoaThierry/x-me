@@ -23,7 +23,7 @@ $transition: all 0.3s;
 
 @font-face {
     font-family: Poppins;
-    src: url("../assets/font/Roboto_Condensed-Medium.ttf");
+    src: url("../assets/font/Poppins-Regular.ttf");
     font-weight: 400;
     font-style: normal;
     font-display: fallback;
@@ -52,24 +52,16 @@ body {
 
     .block {
         @include keli.flex(column, center, center);
-        width: 50%;
-        height: 60vh;
+        margin: 30px auto;
     }
     .content {
         text-align: center;
         padding: $px * 2;
     }
-    @media screen and (max-width: 450px){
-        .block {
-            width: 100%;
-            height: auto;
-        }
-    }
     .profile {
-        @include keli.flex(column, center, center);
         line-height: 40px;
-        height: 50vh;
         z-index: 100;
+        height: 60vh;
 
         .profile-image {
             width: 150px;
@@ -99,12 +91,64 @@ body {
             }
         }
         .profile-image:hover {
-            box-shadow: 2px 2px 22px 0px rgba($color: $color_2, $alpha: 1);
+            box-shadow: 2px 2px 25px 0px rgba($color: $color_2, $alpha: 1);
+        }
+        .contact {
+            @include keli.flex(row, center, center);
+            flex-wrap: wrap;
+            gap: 2rem;
+            list-style: none;
+            padding: $px * 2;
+            z-index: 200;
+
+            .contact-field {
+                @include keli.flex(column, center, left);
+                text-align: center;
+                border: 1px solid $color_2;
+                border-radius: $px * 4;
+                padding: $px * 2;
+                box-shadow: 2px 2px 20px 0px rgba($color: $color_2, $alpha: 0.6);
+                transition: $transition;
+                color: $color_0;
+                text-decoration: none;
+                width: 300px;
+                backdrop-filter: blur($px * 2);
+            }
+            i {
+                font-size: 2rem;
+                padding: $px 0px;
+            }
+            .contact-field:hover {
+                box-shadow: 2px 2px 25px 0px rgba($color: $color_2, $alpha: 1);
+                background-color: transparent;
+            }
+        }
+        @media screen and (max-width: 455px) {
+            .contact {
+                @include keli.flex(row, center, left);
+                gap: 2rem;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            .contact {
+                li {
+                    width: 100%;
+                }
+                .contact-field  {
+                    @include keli.flex(column, center, left);
+                    font-size: 0.9rem;
+                    width: 100%;
+                }
+                i {
+                    font-size: 2rem;
+                    padding: $px 0px;
+                }
+            }
         }
     }
     .about {
-        @include keli.flex(column, center, center);
         width: 50%;
+        height: 50vh;
 
         .about-heading {
             padding: $px;
@@ -126,6 +170,11 @@ body {
     }
     .service {
         width: 100%;
+        height: 50vh;
+        
+        .service-heading {
+            text-align: center;
+        }
         .service-content {
             @include keli.flex(row, center, center);
             gap: 2rem;
@@ -146,15 +195,19 @@ body {
                 .box-heading {
                     font-weight: bolder;
                     padding: $px;
+                    text-align: center;
                 }
                 .box-content {
-                    text-align: justify;
+                    text-align: left;
                     list-style: none;
                     padding: $px;
 
                     .fa-check {
                         color: $color_2;
                     }
+                }
+                i {
+                    padding-right: 4px;
                 }
             }
             @keyframes service-box {
@@ -168,8 +221,171 @@ body {
             }
         }
     }
+    .skill {
+        gap: 2rem;
+
+        .block-skill {
+            @include keli.flex(column, center, center);
+            gap: 1rem;
+            animation: skill 0.3s;
+            animation-timeline: view();
+            
+            .list {
+                @include keli.flex(row, center, center);
+                list-style: none;
+                flex-wrap: wrap;
+
+                li {
+                    color: $color_2;
+                    border: 1px solid $color_2;
+                    border-radius: $px * 4;
+                    padding: $px ($px * 2);
+                    margin: $px;
+                    text-align: center;
+                }
+            }
+            @keyframes skill {
+                from {
+                    opacity: 0;
+                } to {
+                    opacity: 1;
+                }
+            }
+        }
+        // @media screen and (max-width: 470px) {
+        //     .block-skill {
+        //         .list li {
+        //             width: auto;
+        //             text-align: left;
+        //             padding: $px ($px * 2);
+        //         }
+        //     }
+        // }
+        @media screen and (max-width: 450px) {
+            .block-skill {
+                .skill-heading {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    /*
+    .slide-show {
+        @include keli.flex(row, center, center);
+        gap: 4rem;
+        width: 98vw;
+        overflow-x: hidden;
+        
+        img {
+            display: inline-block;
+            width: 80px;
+        }
+    }*/
+    @media screen and (max-width: 300px) {
+        .heading {
+            font-size: 1.5rem;
+        }
+    }
+    @media screen and (min-width: 1700px){
+        .block {
+            height: auto;
+        }
+    }
+    @media screen and (max-width: 1070px){
+        .block {
+            width: 100%;
+            height: auto;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        .block {
+            width: 90%;
+            padding: $px * 2;
+        }
+    }
+    @media screen and (max-width: 338px) {
+        .block {
+            width: 100%;
+            padding: $px;
+        }
+        .profile {
+            .profile-name {
+                font-size: 26px;
+            }
+            .profile-title {
+                font-size: 14px;
+                margin: $px 0px;
+            }
+        }
+        .service {
+            .service-content {
+                .box {
+                    width: 99%;
+                    padding: $px;
+                    height: auto;
+
+                    .box-heading {
+                        text-align: center;
+                        font-size: 0.9rem;
+                    }
+                    .box-content {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 251px) {
+        .service {
+            .service-content {
+                .box {
+                    width: 95vw;
+                    padding: $px;
+                    height: auto;
+
+                    .box-heading {
+                        text-align: left;
+                        font-size: 0.7rem;
+                    }
+                    .box-content {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+    .work {
+        gap: 2rem;
+        .work-heading {
+            text-align: center;
+        }
+        .work-content {
+            @include keli.flex(column, center, center);
+            .project-title {
+                text-align: center;
+                padding: $px * 2;
+            }
+            .image-presentation {
+                @include keli.flex(row, center, center);
+                width: 500px;
+                gap: 1rem;
+                text-align: center;
+                overflow-x: clip;
+
+                img {
+                    width: 100%;
+                    border-radius: $px;
+                }
+            }
+            @media screen and (max-width: 520px) {
+                .image-presentation {
+                    width: 100%;
+                }
+            }
+        }
+    }
     .blur-effect {
-        $circle-t: 10s;
+        $circle-t: 30s;
 
         .blur {
             background-color: $color_2;
@@ -186,9 +402,14 @@ body {
             animation: c0 $circle-t;
         }
         .circle-1 {
-            top: 20%;
+            top: 30%;
             right: 10%;
             animation: c1 $circle-t;
+        }
+        .circle-2 {
+            top: 100vh;
+            right: 60%;
+            animation: c2 $circle-t;
         }
         @keyframes c0 {
             from {
@@ -201,12 +422,35 @@ body {
         }
         @keyframes c1 {
             from {
-                top: 60%;
+                top: 70%;
                 right: 10%;
             } to {
-                top: 20%;
+                top: 30%;
                 right: 10%;
             }
+        }
+        @keyframes c2 {
+            from {
+                top: 0vh;
+                right: 10%;
+            } to {
+                top: 100vh;
+                right: 60%;
+            }
+        }
+    }
+    .footer {
+        @include keli.flex(column, center, center);
+        background-color: $color_1;
+        width: 100%;
+        height: 200px;
+        margin-top: 50px;
+        position: sticky;
+
+        .footer-content {
+            list-style: none;
+            line-height: 40px;
+            text-align: center;
         }
     }
 }

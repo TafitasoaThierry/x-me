@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfolio</title>
+    <title>Tafitasoa Thierry</title>
     <link rel="stylesheet" href="./build/style.css">
     <link rel="stylesheet" href="./assets/icons/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="profile">
+        <div class="profile block">
             <img class="profile-image" src="./assets/img/izaho.png" alt="tafitasoa-profile">
             <h1 class="profile-name">Tafitasoa Thierry</h1>
-            <h2 class="profile-title"><img src="./assets/img/book.png" width="40px" class="badge" alt="tafitasoa-title"> A fullstack Web Developer</h2>
+            <h2 class="profile-title"><img src="./assets/img/book.png" width="40px" class="badge" alt="tafitasoa-title"> Fullstack Web Developer</h2>
+            <ul class="contact">
+                <li><a href="#" class="contact-field"><i class="fa-solid fa-phone"></i> <span class="label">+261 34 16 461 53</a></span></li>
+                <li><a href="https://github.com/TafitasoaThierry" class="contact-field"><i class="fa-brands fa-github"></i> <span class="label">github.com/TafitasoaThierry</span></a></li>
+                <li><a href="nattafitasoa18@gmail.com" class="contact-field"><i class="fa-solid fa-envelope"></i> <span class="label">nattafitasoa18@gmail.com</span></a></li>
+                <!-- <li><i class="fa-brands fa-linkedin"></i> <a href="#">LinkedIn</a></li> -->
+            </ul>
         </div>
         <div class="about block">
-            <h1 class="about-heading">About Me</h1>
+            <h1 class="heading about-heading">About Me</h1>
             <p class="content about-content">
-                I am a Tafitasoa Thierry a fullstack web developer and data structures and algorithms enthusiast.
+                I'm a computer science student passionate about STEM since I was in college, but I started studying computer science +<span id="year"></span> years ago, and since then, I've quickly become a data structures and algorithms enthusiast.
                 I'm obsessed with problem-solving and I'm open to collaborations that let me craft innovative solutions and tackle new challenges.
-                I'm open to collaborations that let me bring my skills to life and tackle new problems, driving growth and innovation in the process.
             </p>
         </div>
         <div class="service block">
-            <h1 class="service-heading">What i do ?</h1>
+            <h1 class="heading service-heading">What i do ?</h1>
             <div class="content service-content">
                 <div class="box">
                     <h3 class="box-heading"><i class="fa-solid fa-database"></i> Backend Development</h3>
                     <ul class="box-content">
                         <li><i class="fa-solid fa-check"></i> A service based REST API with scalability and performance</li>
-                        <li><i class="fa-solid fa-check"></i> I design and implement server side architecture for your project</li>
+                        <li><i class="fa-solid fa-check"></i> I design and implement server side architecture for any project related to software development</li>
                     </ul>
-                    <!-- <p>Spring Boot, Java 21+, REST API, MySQL, PostgreSQL.</p> -->
                 </div>
                 <div class="box">
                     <h3 class="box-heading"><i class="fa-solid fa-user-circle"></i> Frontend Development</h3>
@@ -39,7 +43,6 @@
                         <li><i class="fa-solid fa-check"></i> I build modern and interactive user interface (UI) and user experience (UX)</li>
                         <li><i class="fa-solid fa-check"></i> Responsive web page for any device(mobile, desktop and tablete)</li>
                     </ul>
-                    <!-- <p>Vue.js, React.js, TypeScript, SCSS, Tailwind CSS, Bootstrap.</p> -->
                 </div>
                 <div class="box">
                     <h3 class="box-heading"><i class="fa-solid fa-bolt"></i> Fullstack Web Apps</h3>
@@ -50,19 +53,113 @@
                 </div>
             </div>
         </div>
-        <div class="network block">
-            <h1 class="contact-heading">Contact me</h1>
-            <p class="content contact-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit delectus minus tempora, iste vitae reprehenderit ipsa consequuntur ratione dolor culpa voluptate officia, soluta est id sit recusandae iusto quos atque.</p>
+        <div class="skill block">
+            <div class="block-skill">
+                <h1 class="heading">Skills</h1>
+                <h3 class="skill-heading">Programming Languages</h3>
+                <ul class="list languages">
+                    <li>Javascript ES5+</li>
+                    <li>Typescript</li>
+                    <li>Java 21+</li>
+                </ul>
+            </div>
+            <div class="block-skill">
+                <h3 class="skill-heading">Frontend Stacks</h3>
+                <ul class="list stacks">
+                    <li>Sass/Scss</li>
+                    <li>Vue JS</li>
+                    <li>React JS</li>
+                    <li>Bootstrap</li>
+                    <li>TailwindCss</li>
+                </ul>
+            </div>
+            <div class="block-skill">
+                <h3 class="skill-heading">Backend Development</h3>
+                <ul class="list stacks">
+                    <li>Spring Boot</li>
+                    <li>Hibernate</li>
+                    <li>REST API</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+            <div class="block-skill">
+                <h3 class="skill-heading">Versioning tool</h3>
+                <ul class="list versioning">
+                    <li>Git</li>
+                </ul>
+            </div>
+            <div class="block-skill">
+                <h3 class="skill-heading">Anothers</h3>
+                <ul class="list anoter">
+                    <li>C/C++</li>
+                    <li>Python</li>
+                    <li>Networking</li>
+                    <li>DSA</li>
+                    <li>Clean architecture</li>
+                </ul>
+            </div>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <!-- <div class="slide-show kisaka block">
+            <div><img src="./assets/img/C.png" alt="stack"></div>
+            <div><img src="./assets/img/C++ (CPlusPlus).png" alt="stack"></div>
+            <div><img src="./assets/img/Git.png" alt="stack"></div>
+            <div><img src="./assets/img/Java.png" alt="stack"></div>
+            <div><img src="./assets/img/Spring.png" alt="stack"></div>
+            <div><img src="./assets/img/NPM.png" alt="stack"></div>
+            <div><img src="./assets/img/JavaScript.png" alt="stack"></div>
+            <div><img src="./assets/img/TypeScript.png" alt="stack"></div>
+            <div><img src="./assets/img/Sass.png" alt="stack"></div>
+            <div><img src="./assets/img/Vue.js.png" alt="stack"></div>
+            <div><img src="./assets/img/React.png" alt="stack"></div>
+            <div><img src="./assets/img/Vite.js.png" alt="stack"></div>
+            <div><img src="./assets/img/Bootstrap.png" alt="stack"></div>
+            <div><img src="./assets/img/CSS3.png" alt="stack"></div>
+            <div><img src="./assets/img/HTML5.png" alt="stack"></div>
+        </div> -->
+        <div class="block work">
+            <h1 class="heading work-heading">Some of my works</h1>
+            <div class="work-content">
+                <h4 class="project-title">Task Automatizer for Spring Boot Project powered by C/C++ and G++ compiiler</h4>
+                <div class="image-presentation">
+                    <img src="./assets/img/work/booking-home.png" alt="my-work-0">
+                </div>
+            </div>
+            <div class="work-content">
+                <h4 class="project-title">Hotel Booking Room System</h4>
+                <div class="image-presentation">
+                    <img src="./assets/img/work/booking-home.png" alt="my-work-0">
+                    <img src="./assets/img/work/tarif.png" alt="my-work-0">
+                    <img src="./assets/img/work/booking-home.png" alt="my-work-0">
+                </div>
+            </div>
+            <div class="work-content">
+                <h4 class="project-title">Real Time Powered Dashboard</h4>
+                <div class="image-presentation">
+                    <img src="./assets/img/work/admin.png" alt="my-work-0">
+                </div>
+            </div>
+            <div class="work-content">
+                <h4 class="project-title">Porfolio</h4>
+                <div class="image-presentation">
+                    <img src="./assets/img/work/porfolio.png" alt="my-work-0">
+                </div>
+            </div>
+            <div>
+                <h5>For more project visit my github</h5>
+            </div>
+        </div>
         <div class="blur-effect">
             <div class="blur circle-0"></div>
             <div class="blur circle-1"></div>
+            <div class="blur circle-2"></div>
+        </div>
+        <div class="footer">
+            <ul class="footer-content">
+                <li><small><i class="fa-solid fa-copyright"></i> Copyright 2025 - All reserved</small></li>
+                <li><small>Porfolio made by TafitasoaThierry</small></li>
+                <li><small>Contact me if you need collaborations</small></li>
+            </ul>
         </div>
     </div>
     <script src="./build/script.js"></script>
