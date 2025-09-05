@@ -1,20 +1,17 @@
 device();
 loading();
 startSlideShow();
-let timer:number = 0;
-
+var timer = 0;
 function getData() {
-    let width:number = window.innerWidth;
-    let height:number = window.innerHeight;
-
-    console.log(`w: ${width}, h: ${height}`);
-    console.log(`t: ${timer}`);
-    setTimeout(() => {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    console.log("w: ".concat(width, ", h: ").concat(height));
+    console.log("t: ".concat(timer));
+    setTimeout(function () {
         timer = timer + 1;
         getData();
-    }, 1000)
+    }, 1000);
 }
-
 function device() {
     console.log(navigator.appCodeName);
     console.log(navigator.product);
@@ -23,49 +20,49 @@ function device() {
     console.log(navigator.appVersion);
 }
 function loading() {
-    let container = document.getElementsByClassName("container")[0] as HTMLElement;
-    let welcome = document.getElementsByClassName("welcome")[0] as HTMLElement;
-    let presentation = document.getElementsByClassName("presentation")[0] as HTMLElement;
-
+    var container = document.getElementsByClassName("container")[0];
+    var welcome = document.getElementsByClassName("welcome")[0];
+    var presentation = document.getElementsByClassName("presentation")[0];
     document.getElementById("year").innerHTML = (new Date().getFullYear() - 2023).toString();
     document.body.style.height = "100vh";
     container.style.display = "none";
     presentation.style.display = "none";
-
-    setTimeout(() => {
+    setTimeout(function () {
         presentation.style.display = "inherit";
-        setTimeout(() => {
+        setTimeout(function () {
             welcome.style.display = "none";
             container.style.display = "inherit";
             document.body.style.height = "auto";
             // getData();
-        }, 4000)
-    }, 4000)
+        }, 4000);
+    }, 4000);
 }
 function startSlideShow() {
-    let kisaka:any = document.getElementsByClassName("image-presentation")[1] as HTMLElement;
-    let mandeha:boolean = true;
-    let miverina:boolean = false;
-    let fetra:number = 505;
-    let fiatombohany:number = 0;
-    let x:number = fiatombohany;
-
-    setInterval(() => {
+    var kisaka = document.getElementsByClassName("image-presentation")[1];
+    var mandeha = true;
+    var miverina = false;
+    var fetra = 505;
+    var fiatombohany = 0;
+    var x = fiatombohany;
+    setInterval(function () {
         fetra = window.innerWidth <= 340 ? 305 : 505;
-        if((mandeha) && (x != fetra)) {
+        if ((mandeha) && (x != fetra)) {
             kisaka.scrollLeft = x;
             x++;
-        }else if((mandeha) && (x == fetra)) {
+        }
+        else if ((mandeha) && (x == fetra)) {
             mandeha = false;
             miverina = true;
             kisaka.scrollLeft = x;
-        }else if((miverina) && (x != fiatombohany)) {
+        }
+        else if ((miverina) && (x != fiatombohany)) {
             kisaka.scrollLeft = x;
             x--;
-        }else {
+        }
+        else {
             mandeha = true;
             miverina = false;
             kisaka.scrollLeft = x;
         }
-    }, 30)
+    }, 30);
 }

@@ -1,6 +1,6 @@
 {
   "include": ["ts"],
   "compilerOptions": {
-    "outDir": "./build"
+    "outDir": "build/js"
   }
 }

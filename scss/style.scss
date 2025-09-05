@@ -15,7 +15,7 @@ $transition: all 0.3s;
 
 @font-face {
     font-family: Roboto;
-    src: url("../assets/font/Roboto_Condensed-Medium.ttf");
+    src: url("../../assets/font/Roboto_Condensed-Medium.ttf");
     font-weight: 400;
     font-style: normal;
     font-display: fallback;
@@ -23,7 +23,7 @@ $transition: all 0.3s;
 
 @font-face {
     font-family: Poppins;
-    src: url("../assets/font/Poppins-Regular.ttf");
+    src: url("../../assets/font/Poppins-Regular.ttf");
     font-weight: 400;
     font-style: normal;
     font-display: fallback;
@@ -31,7 +31,7 @@ $transition: all 0.3s;
 
 @font-face {
     font-family: Trebuchet;
-    src: url("../assets/font/trebuc.ttf");
+    src: url("../../assets/font/trebuc.ttf");
     font-weight: 400;
     font-style: normal;
     font-display: fallback;
@@ -112,16 +112,19 @@ body {
                 transition: $transition;
                 color: $color_0;
                 text-decoration: none;
+                background-color: transparent;
                 width: 300px;
-                backdrop-filter: blur($px * 2);
             }
             i {
                 font-size: 2rem;
                 padding: $px 0px;
             }
-            .contact-field:hover {
+            .contact-field:hover, .contact-field:visited, .contact-field:link, .contact-field:focus {
                 box-shadow: 2px 2px 25px 0px rgba($color: $color_2, $alpha: 1);
                 background-color: transparent;
+                border-radius: $px * 4;
+                text-decoration: none;
+                outline: none;
             }
         }
         @media screen and (max-width: 455px) {
