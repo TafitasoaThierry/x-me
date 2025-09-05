@@ -1,8 +1,9 @@
-device();
+//device();
 loading();
 startSlideShow();
-let timer:number = 0;
+//let timer:number = 0;
 
+/*
 function getData() {
     let width:number = window.innerWidth;
     let height:number = window.innerHeight;
@@ -22,6 +23,7 @@ function device() {
     console.log(navigator.platform);
     console.log(navigator.appVersion);
 }
+*/
 function loading() {
     let container = document.getElementsByClassName("container")[0] as HTMLElement;
     let welcome = document.getElementsByClassName("welcome")[0] as HTMLElement;

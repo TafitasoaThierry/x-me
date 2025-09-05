@@ -1,17 +1,20 @@
-device();
+//device();
 loading();
 startSlideShow();
-var timer = 0;
+//let timer:number = 0;
+/*
 function getData() {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    console.log("w: ".concat(width, ", h: ").concat(height));
-    console.log("t: ".concat(timer));
-    setTimeout(function () {
+    let width:number = window.innerWidth;
+    let height:number = window.innerHeight;
+
+    console.log(`w: ${width}, h: ${height}`);
+    console.log(`t: ${timer}`);
+    setTimeout(() => {
         timer = timer + 1;
         getData();
-    }, 1000);
+    }, 1000)
 }
+
 function device() {
     console.log(navigator.appCodeName);
     console.log(navigator.product);
@@ -19,6 +22,7 @@ function device() {
     console.log(navigator.platform);
     console.log(navigator.appVersion);
 }
+*/
 function loading() {
     var container = document.getElementsByClassName("container")[0];
     var welcome = document.getElementsByClassName("welcome")[0];

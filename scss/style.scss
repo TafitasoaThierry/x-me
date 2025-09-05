@@ -43,7 +43,7 @@ $transition: all 0.3s;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: Trebuchet, sans-serif;
     background-image: linear-gradient(to bottom right, $color_1, $color_3);
     background-size: cover;
     background-repeat: no-repeat;
@@ -269,18 +269,6 @@ body {
             }
         }
     }
-    /*
-    .slide-show {
-        @include flex(row, center, center);
-        gap: 4rem;
-        width: 98vw;
-        overflow-x: hidden;
-        
-        img {
-            display: inline-block;
-            width: 80px;
-        }
-    }*/
     @media screen and (max-width: 300px) {
         .heading {
             font-size: 1.5rem;

@@ -26,7 +26,7 @@
   font-display: fallback;
 }
 body {
-  font-family: sans-serif;
+  font-family: Trebuchet, sans-serif;
   background-image: linear-gradient(to bottom right, #19212D, #000000);
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,18 +41,6 @@ body {
   font-family: Trebuchet, sans-serif;
   color: #FFFFFF;
   z-index: 500;
-  /*
-  .slide-show {
-      @include flex(row, center, center);
-      gap: 4rem;
-      width: 98vw;
-      overflow-x: hidden;
-
-      img {
-          display: inline-block;
-          width: 80px;
-      }
-  }*/
 }
 .container .block {
   display: flex;
