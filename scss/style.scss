@@ -1,5 +1,3 @@
-@use "./keli.scss";
-
 * {
     padding: 0;
     margin: 0;
@@ -12,6 +10,13 @@ $color_2: #58A6E9;
 $color_3: #000000;
 $px: 8px;
 $transition: all 0.3s;
+
+@mixin flex($flexDirection: row, $alignItem: center, $justifyContent: center) {
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: $alignItem;
+    justify-content: $justifyContent;
+}
 
 @font-face {
     font-family: Roboto;
@@ -46,13 +51,13 @@ body {
 }
 
 .container {
-    @include keli.flex(column, center, center);
+    @include flex(column, center, center);
     font-family: Trebuchet, sans-serif;
     color: $color_0;
     z-index: 500;
 
     .block {
-        @include keli.flex(column, center, center);
+        @include flex(column, center, center);
         margin: 60px auto auto auto;
     }
     .content {
@@ -76,7 +81,7 @@ body {
             font-size: 2rem;
         }
         .profile-title {
-            @include keli.flex(row, center, center);
+            @include flex(row, center, center);
             font-size: 1rem;
             animation: show-badge 0.5s linear;
             margin: $px;
@@ -95,7 +100,7 @@ body {
             box-shadow: 2px 2px 25px 0px rgba($color: $color_2, $alpha: 1);
         }
         .contact {
-            @include keli.flex(row, center, center);
+            @include flex(row, center, center);
             flex-wrap: wrap;
             gap: 2rem;
             list-style: none;
@@ -103,7 +108,7 @@ body {
             z-index: 200;
 
             .contact-field {
-                @include keli.flex(column, center, left);
+                @include flex(column, center, left);
                 text-align: center;
                 border: 1px solid $color_2;
                 border-radius: $px * 4;
@@ -129,7 +134,7 @@ body {
         }
         @media screen and (max-width: 455px) {
             .contact {
-                @include keli.flex(row, center, left);
+                @include flex(row, center, left);
                 gap: 2rem;
             }
         }
@@ -139,7 +144,7 @@ body {
                     width: 100%;
                 }
                 .contact-field  {
-                    @include keli.flex(column, center, left);
+                    @include flex(column, center, left);
                     font-size: 0.9rem;
                     width: 100%;
                 }
@@ -180,7 +185,7 @@ body {
             text-align: center;
         }
         .service-content {
-            @include keli.flex(row, center, center);
+            @include flex(row, center, center);
             gap: 2rem;
             flex-wrap: wrap;
             
@@ -229,13 +234,13 @@ body {
         gap: 2rem;
 
         .block-skill {
-            @include keli.flex(column, center, center);
+            @include flex(column, center, center);
             gap: 1rem;
             animation: skill 0.3s;
             animation-timeline: view();
             
             .list {
-                @include keli.flex(row, center, center);
+                @include flex(row, center, center);
                 list-style: none;
                 flex-wrap: wrap;
 
@@ -266,7 +271,7 @@ body {
     }
     /*
     .slide-show {
-        @include keli.flex(row, center, center);
+        @include flex(row, center, center);
         gap: 4rem;
         width: 98vw;
         overflow-x: hidden;
@@ -356,7 +361,7 @@ body {
             text-align: center;
         }
         .work-content {
-            @include keli.flex(column, center, center);
+            @include flex(column, center, center);
 
             .project-title {
                 text-align: center;
@@ -368,7 +373,7 @@ body {
                 }
             }
             .image-presentation {
-                @include keli.flex(row, center, center);
+                @include flex(row, center, center);
                 width: 500px;
                 gap: 1rem;
                 text-align: center;
@@ -458,7 +463,7 @@ body {
         }
     }
     .footer {
-        @include keli.flex(column, center, center);
+        @include flex(column, center, center);
         background-color: $color_1;
         width: 100%;
         height: 200px;
@@ -473,7 +478,7 @@ body {
     }
 }
 .welcome {
-    @include keli.flex(column, center, center);
+    @include flex(column, center, center);
     background-color: transparent;
     width: 100%;
     height: 100vh;
@@ -483,7 +488,7 @@ body {
     font-family: Poppins, sans-serif;
 
     .welcome-modal {
-        @include keli.flex(column, center, start);
+        @include flex(column, center, start);
         width: 500px;
         height: 350px;
         background-image: linear-gradient(to bottom right, $color_1, $color_2,);
@@ -495,7 +500,7 @@ body {
             padding: $px;
         }
         .presentation {
-            @include keli.flex(row, center, center);
+            @include flex(row, center, center);
             animation: presentation 2s linear;
         }
         @keyframes presentation {

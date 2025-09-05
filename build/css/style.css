@@ -43,7 +43,7 @@ body {
   z-index: 500;
   /*
   .slide-show {
-      @include keli.flex(row, center, center);
+      @include flex(row, center, center);
       gap: 4rem;
       width: 98vw;
       overflow-x: hidden;
