@@ -3,6 +3,10 @@ loading();
 startSlideShow();
 //let timer:number = 0;
 
+document.addEventListener('contextmenu', function() {
+    event.preventDefault();
+})
+
 /*
 function getData() {
     let width:number = window.innerWidth;

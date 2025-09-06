@@ -117,17 +117,14 @@ body {
   text-decoration: none;
   background-color: transparent;
   width: 300px;
+  cursor: alias;
 }
 .container .profile .contact i {
   font-size: 2rem;
   padding: 8px 0px;
 }
-.container .profile .contact .contact-field:hover, .container .profile .contact .contact-field:visited, .container .profile .contact .contact-field:link, .container .profile .contact .contact-field:focus {
+.container .profile .contact .contact-field:hover {
   box-shadow: 2px 2px 25px 0px #58a6e9;
-  background-color: transparent;
-  border-radius: 32px;
-  text-decoration: none;
-  outline: none;
 }
 @media screen and (max-width: 455px) {
   .container .profile .contact {

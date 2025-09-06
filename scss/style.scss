@@ -119,17 +119,14 @@ body {
                 text-decoration: none;
                 background-color: transparent;
                 width: 300px;
+                cursor: alias;
             }
             i {
                 font-size: 2rem;
                 padding: $px 0px;
             }
-            .contact-field:hover, .contact-field:visited, .contact-field:link, .contact-field:focus {
+            .contact-field:hover {
                 box-shadow: 2px 2px 25px 0px rgba($color: $color_2, $alpha: 1);
-                background-color: transparent;
-                border-radius: $px * 4;
-                text-decoration: none;
-                outline: none;
             }
         }
         @media screen and (max-width: 455px) {
