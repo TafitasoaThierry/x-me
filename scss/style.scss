@@ -19,14 +19,6 @@ $transition: all 0.3s;
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url("../../assets/font/Roboto_Condensed-Medium.ttf");
-    font-weight: 400;
-    font-style: normal;
-    font-display: fallback;
-}
-
-@font-face {
     font-family: Poppins;
     src: url("../../assets/font/Poppins-Regular.ttf");
     font-weight: 400;
@@ -353,10 +345,11 @@ body {
                 gap: 1rem;
                 display: none;
                 width: 800px;
+
                 img {
                     width: 100%;
                     height: 500px;
-                    border-radius: $px;
+                    border-radius: 4px;
                     border: 1px solid $color_0;
                     animation: img 1s linear;
                 }
@@ -371,56 +364,21 @@ body {
                     font-size: 1rem;
                     text-align: center;
                     padding: $px;
-                    position: relative;
-                    bottom: 0px;
                 }
             }
             .prev, .next {
                 outline: none;
                 border: none;
                 background-color: transparent;
-                color: $color_0;
-                font-size: 4rem;
+                color: rgba($color: $color_2, $alpha: 0.2);
+                font-size: 2rem;
+                transition: $transition;
+                padding: $px;
+            }
+            .prev:hover, .next:hover {
+                color: rgba($color: $color_2, $alpha: 1);
             }
         }
-        // .work-content {
-        //     @include flex(column, center, center);
-        //     display: none;
-
-        //     .project-title {
-        //         text-align: center;
-        //         padding: $px * 2;
-        //     }
-        //     @media screen and (max-width: 450px) {
-        //         .project-title {
-        //             font-size: 1rem;
-        //         }
-        //     }
-        //     .image-presentation {
-        //         @include flex(row, center, center);
-        //         width: 500px;
-        //         gap: 1rem;
-        //         text-align: center;
-        //         overflow: hidden;
-
-        //         img {
-        //             width: 98%;
-        //             border: 1px solid $color_0;
-        //             border-radius: 4px;
-        //             animation: project 0.3s;
-        //             animation-timeline: view();
-        //         }
-        //     }
-        //     @media screen and (max-width: 520px) {
-        //         .image-presentation {
-        //             width: 100%;
-        //         }
-        //     }
-        // 
-        //     img {
-        //         width: 500px;
-        //     }
-        // }
         .redirect {
             text-align: center;
             padding: ($px*4) $px;

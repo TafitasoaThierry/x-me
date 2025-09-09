@@ -1,31 +1,7 @@
-//device();
 loading();
-// startSlideShow();
-//let timer:number = 0;
 document.addEventListener('contextmenu', function () {
     event.preventDefault();
 });
-/*
-function getData() {
-    let width:number = window.innerWidth;
-    let height:number = window.innerHeight;
-
-    console.log(`w: ${width}, h: ${height}`);
-    console.log(`t: ${timer}`);
-    setTimeout(() => {
-        timer = timer + 1;
-        getData();
-    }, 1000)
-}
-
-function device() {
-    console.log(navigator.appCodeName);
-    console.log(navigator.product);
-    console.log(navigator.language);
-    console.log(navigator.platform);
-    console.log(navigator.appVersion);
-}
-*/
 function loading() {
     var container = document.getElementsByClassName("container")[0];
     var welcome = document.getElementsByClassName("welcome")[0];
@@ -40,39 +16,9 @@ function loading() {
             welcome.style.display = "none";
             container.style.display = "inherit";
             document.body.style.height = "auto";
-            // getData();
         }, 4000);
     }, 4000);
 }
-/*
-function startSlideShow() {
-    let kisaka:any = document.getElementsByClassName("image-presentation")[1] as HTMLElement;
-    let mandeha:boolean = true;
-    let miverina:boolean = false;
-    let fetra:number = 505;
-    let fiatombohany:number = 0;
-    let x:number = fiatombohany;
-
-    setInterval(() => {
-        fetra = window.innerWidth <= 340 ? 305 : 505;
-        if((mandeha) && (x != fetra)) {
-            kisaka.scrollLeft = x;
-            x++;
-        }else if((mandeha) && (x == fetra)) {
-            mandeha = false;
-            miverina = true;
-            kisaka.scrollLeft = x;
-        }else if((miverina) && (x != fiatombohany)) {
-            kisaka.scrollLeft = x;
-            x--;
-        }else {
-            mandeha = true;
-            miverina = false;
-            kisaka.scrollLeft = x;
-        }
-    }, 30)
-}
-*/
 var slide = document.getElementsByClassName("work-content");
 var start = 0;
 var end = 4;
