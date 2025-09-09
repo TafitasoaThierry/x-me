@@ -1,6 +1,6 @@
 //device();
 loading();
-startSlideShow();
+// startSlideShow();
 //let timer:number = 0;
 
 document.addEventListener('contextmenu', function() {
@@ -48,6 +48,7 @@ function loading() {
         }, 4000)
     }, 4000)
 }
+/*
 function startSlideShow() {
     let kisaka:any = document.getElementsByClassName("image-presentation")[1] as HTMLElement;
     let mandeha:boolean = true;
@@ -74,4 +75,32 @@ function startSlideShow() {
             kisaka.scrollLeft = x;
         }
     }, 30)
+}
+*/
+
+let slide = document.getElementsByClassName("work-content") as unknown as HTMLElement;
+let start = 0;
+let end = 4;
+let current = start;
+
+slide[current].style.display = "inline";
+function forward() {
+    slide[current].style.display = "none";
+    if(current == end) {
+        current = start;
+        slide[current].style.display = "inline";
+    }else {
+        current = current + 1;
+        slide[current].style.display = "inline";
+    }
+}
+function back() {
+    slide[current].style.display = "none";
+    if(current == start) {
+        current = end;
+        slide[current].style.display = "inline";
+    }else {
+        current = current - 1;
+        slide[current].style.display = "inline";
+    }
 }

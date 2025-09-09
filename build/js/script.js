@@ -1,6 +1,6 @@
 //device();
 loading();
-startSlideShow();
+// startSlideShow();
 //let timer:number = 0;
 document.addEventListener('contextmenu', function () {
     event.preventDefault();
@@ -44,32 +44,59 @@ function loading() {
         }, 4000);
     }, 4000);
 }
+/*
 function startSlideShow() {
-    var kisaka = document.getElementsByClassName("image-presentation")[1];
-    var mandeha = true;
-    var miverina = false;
-    var fetra = 505;
-    var fiatombohany = 0;
-    var x = fiatombohany;
-    setInterval(function () {
+    let kisaka:any = document.getElementsByClassName("image-presentation")[1] as HTMLElement;
+    let mandeha:boolean = true;
+    let miverina:boolean = false;
+    let fetra:number = 505;
+    let fiatombohany:number = 0;
+    let x:number = fiatombohany;
+
+    setInterval(() => {
         fetra = window.innerWidth <= 340 ? 305 : 505;
-        if ((mandeha) && (x != fetra)) {
+        if((mandeha) && (x != fetra)) {
             kisaka.scrollLeft = x;
             x++;
-        }
-        else if ((mandeha) && (x == fetra)) {
+        }else if((mandeha) && (x == fetra)) {
             mandeha = false;
             miverina = true;
             kisaka.scrollLeft = x;
-        }
-        else if ((miverina) && (x != fiatombohany)) {
+        }else if((miverina) && (x != fiatombohany)) {
             kisaka.scrollLeft = x;
             x--;
-        }
-        else {
+        }else {
             mandeha = true;
             miverina = false;
             kisaka.scrollLeft = x;
         }
-    }, 30);
+    }, 30)
+}
+*/
+var slide = document.getElementsByClassName("work-content");
+var start = 0;
+var end = 4;
+var current = start;
+slide[current].style.display = "inline";
+function forward() {
+    slide[current].style.display = "none";
+    if (current == end) {
+        current = start;
+        slide[current].style.display = "inline";
+    }
+    else {
+        current = current + 1;
+        slide[current].style.display = "inline";
+    }
+}
+function back() {
+    slide[current].style.display = "none";
+    if (current == start) {
+        current = end;
+        slide[current].style.display = "inline";
+    }
+    else {
+        current = current - 1;
+        slide[current].style.display = "inline";
+    }
 }

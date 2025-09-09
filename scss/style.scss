@@ -345,39 +345,82 @@ body {
         .work-heading {
             text-align: center;
         }
-        .work-content {
-            @include flex(column, center, center);
+        .slide-container {
+            @include flex(row, center, center);
 
-            .project-title {
-                text-align: center;
-                padding: $px * 2;
-            }
-            @media screen and (max-width: 450px) {
-                .project-title {
-                    font-size: 1rem;
-                }
-            }
-            .image-presentation {
-                @include flex(row, center, center);
-                width: 500px;
+            .work-content {
+                @include flex(column, center, center);
                 gap: 1rem;
-                text-align: center;
-                overflow: hidden;
-
+                display: none;
+                width: 800px;
                 img {
-                    width: 98%;
+                    width: 100%;
+                    height: 500px;
+                    border-radius: $px;
                     border: 1px solid $color_0;
-                    border-radius: 4px;
-                    animation: project 0.3s;
-                    animation-timeline: view();
+                    animation: img 1s linear;
+                }
+                @keyframes img {
+                    from {
+                        opacity: 0;
+                    }to {
+                        opacity: 1;
+                    }
+                }
+                .project-description {
+                    font-size: 1rem;
+                    text-align: center;
+                    padding: $px;
+                    position: relative;
+                    bottom: 0px;
                 }
             }
-            @media screen and (max-width: 520px) {
-                .image-presentation {
-                    width: 100%;
-                }
+            .prev, .next {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                color: $color_0;
+                font-size: 4rem;
             }
         }
+        // .work-content {
+        //     @include flex(column, center, center);
+        //     display: none;
+
+        //     .project-title {
+        //         text-align: center;
+        //         padding: $px * 2;
+        //     }
+        //     @media screen and (max-width: 450px) {
+        //         .project-title {
+        //             font-size: 1rem;
+        //         }
+        //     }
+        //     .image-presentation {
+        //         @include flex(row, center, center);
+        //         width: 500px;
+        //         gap: 1rem;
+        //         text-align: center;
+        //         overflow: hidden;
+
+        //         img {
+        //             width: 98%;
+        //             border: 1px solid $color_0;
+        //             border-radius: 4px;
+        //             animation: project 0.3s;
+        //             animation-timeline: view();
+        //         }
+        //     }
+        //     @media screen and (max-width: 520px) {
+        //         .image-presentation {
+        //             width: 100%;
+        //         }
+        //     }
+        // 
+        //     img {
+        //         width: 500px;
+        //     }
+        // }
         .redirect {
             text-align: center;
             padding: ($px*4) $px;
